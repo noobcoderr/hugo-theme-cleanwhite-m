@@ -3,7 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <span id="busuanzi_container_site_uv">
+                    	<center>宁来了？天字<span id="busuanzi_value_site_uv"></span>号雅座一位</center>
+					    
+					</span>
                 <ul class="list-inline text-center">
+
                    {{ if .Site.Params.social.rss }}
                    <li>
                        <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
@@ -171,18 +176,27 @@
                 </ul>
 		<p class="copyright text-muted">
                     Copyright &copy; {{ .Site.Title }} {{ now.Year }}
+
                     <br>
+
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
                         src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
                     </iframe>
+                    
                 </p>
+            </div>
+            <!-- add site visit num  -->
+            <div>
+            	
             </div>
         </div>
     </div>
 </footer>
+
 
 
 
@@ -287,3 +301,36 @@
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
+
+<!-- add website runtime -->
+<center>
+百年老站 拥有<span id=span_dt_dt style="color: #0196e3;"></span>历史
+<script language=javascript>
+function show_date_time(){
+	window.setTimeout("show_date_time()",1000);
+	BirthDay=new Date("8/22/2019 00:34:58");
+
+	today= new Date();
+	
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+
+	hrsold=Math.floor(e_hrsold);
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=Math.floor((e_hrsold-hrsold)*60);
+	seconds=Math.floor((e_minsold-minsold)*60);
+	span_dt_dt.innerHTML=""+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+show_date_time();
+</SCRIPT>
+</center>
+
+
+

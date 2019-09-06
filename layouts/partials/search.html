@@ -12,7 +12,8 @@
 const search = instantsearch({
   appId: '{{ .Site.Params.algolia_appId }}',
   indexName: '{{ .Site.Params.algolia_indexName }}',
-  apiKey: '{{ .Site.Params.algolia_apiKey }}'
+  apiKey: '{{ .Site.Params.algolia_apiKey }}',
+  urlSync: true
 });
 
 const hitTemplate = function(hit) {
